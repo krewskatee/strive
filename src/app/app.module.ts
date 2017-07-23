@@ -10,14 +10,17 @@ import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FitbitauthComponent } from './fitbitauth/fitbitauth.component';
+import { LandingPageDetailsComponent } from './landing-page-details/landing-page-details.component';
 
 const appRoutes: Routes = [
-  {path: '', redirectTo: '/', pathMatch: 'full'},
-  {path: 'authenticate', component: AuthenticateComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'fitbitauth', component: FitbitauthComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'register', component: RegisterComponent}
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'authenticate', component: AuthenticateComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'fitbitauth', component: FitbitauthComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'home', component: LandingPageDetailsComponent },
+  { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -27,7 +30,8 @@ const appRoutes: Routes = [
     AuthenticateComponent,
     RegisterComponent,
     DashboardComponent,
-    FitbitauthComponent
+    FitbitauthComponent,
+    LandingPageDetailsComponent
   ],
   imports: [
     BrowserModule,
