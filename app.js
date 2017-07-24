@@ -10,6 +10,7 @@ const passport = require('passport');
 const appRoutes = require('./routes/users');
 const config = require('./config/db');
 const hbs = require('hbs');
+const bcrypt = require('bcryptjs');
 
 const app = express();
 mongoose.connect(config.db);

@@ -1,26 +1,27 @@
 const express = require('express');
 const router = express.Router();
+const bcrypt = require('bcryptjs');
 
-router.get('/register', (req, res, next) => {
-  res.send('register');
-});
+const User = require('../models/user');
 
-
-router.get('/authenticate', (req, res, next) => {
-  res.send('authenticate');
-});
-
-router.get('/fitbitauth', (req, res, next) => {
-  res.send('fitbitauth');
-});
-
-
-router.get('/dashboard', (req, res, next) => {
-  res.send('dashboard');
-});
-
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
+router.post('/register', (req, res, next) => {
+  const user = new User({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    password: bcrypt.hashSync(req.body.password, 10),
+    email: req.body.email
+  });
+  user.save(function(err, result) {
+    if (err) {
+      return res.status(500).json({
+        title: 'An error occured'
+      });
+    }
+      res.status(201).json({
+        message: 'user created',
+        obj: result
+      });
+    });
+  });
 
 module.exports = router;
