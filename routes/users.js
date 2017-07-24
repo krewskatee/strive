@@ -2,21 +2,21 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/register', (req, res, next) => {
-  res.send('REGISTER');
+  res.send('register');
 });
 
 
 router.get('/authenticate', (req, res, next) => {
-  res.send('AUTHENTICATE');
+  res.send('authenticate');
 });
 
 router.get('/fitbitauth', (req, res, next) => {
-  res.send('FITBIT AUTH');
+  res.send('fitbitauth');
 });
 
 
 router.get('/dashboard', (req, res, next) => {
-  res.send('DASHBOARD');
+  res.send('dashboard');
 });
 
 router.get('/', (req, res, next) => {
