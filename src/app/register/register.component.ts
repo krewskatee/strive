@@ -21,12 +21,12 @@ export class RegisterComponent implements OnInit {
       this.myForm.value.email,
       this.myForm.value.password,
       this.myForm.value.firstName,
-      this.myForm.value.lastName
+      this.myForm.value.lastName,
     );
     this.authService.registerUser(user)
     .subscribe(
-      data => this.flashmessage.show('You are now registered!', {cssClass: 'alert-success', timeout: '3000'}),
-      error => this.flashmessage.show('You are not registered!', {cssClass: 'alert-success', timeout: '3000'})
+      data => this.flashmessage.show('You are now registered.', {cssClass: 'alert-success', timeout: '2000'}),
+      error => this.flashmessage.show('Failed to register user.', {cssClass: 'alert-danger', timeout: '2000'})
     );
 
     this.myForm.reset();

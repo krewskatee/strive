@@ -14,9 +14,11 @@ import { LandingPageDetailsComponent } from './landing-page-details/landing-page
 import { AuthService } from '../../services/auth.service';
 
 import { FlashMessagesModule } from 'angular2-flash-messages';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
   { path: 'authenticate', component: AuthenticateComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'fitbitauth', component: FitbitauthComponent },
@@ -32,7 +34,8 @@ const appRoutes: Routes = [
     RegisterComponent,
     DashboardComponent,
     FitbitauthComponent,
-    LandingPageDetailsComponent
+    LandingPageDetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

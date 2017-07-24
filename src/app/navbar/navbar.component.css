@@ -1,3 +1,7 @@
 .navbar-ct-transparent {
   background-color: rgb(44, 62, 80);
 }
+
+.navbar-right {
+  margin-top: 20px;
+}

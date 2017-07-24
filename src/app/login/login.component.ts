@@ -6,20 +6,16 @@ import { User } from '../../../models/user.model';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-register',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class LoginComponent implements OnInit {
+
   myForm: FormGroup;
 
-  constructor(private authService: AuthService, private router: Router, private flashmessage: FlashMessagesService) { }
+  constructor(private flashmessage: FlashMessagesService, private authService: AuthService, private router: Router) {}
 
-  onLogout() {
-    this.authService.logOut();
-    this.router.navigate(['/home']);
-    this.flashmessage.show('You have successfully logged out.', {cssClass: 'alert-success', timeout: '2000'});
-  }
 
   onSubmit() {
       const user = new User(this.myForm.value.email, this.myForm.value.password);
@@ -46,9 +42,5 @@ export class NavbarComponent implements OnInit {
           ]),
           password: new FormControl(null, Validators.required)
       });
-  }
-
-  isLoggedIn() {
-    return this.authService.isLoggedIn();
   }
 }

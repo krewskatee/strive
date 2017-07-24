@@ -17,6 +17,7 @@
       <label for="password">Password</label>
       <input type="password" id="password" class="form-control" formControlName="password">
     </div>
-    <button class="btn btn-primary" type="submit" [disabled]="!myForm.valid">Register</button>
+      <button class="btn btn-primary" type="submit" [disabled]="!myForm.valid">Register</button>
+      <p style="color:white"> Already have an account? <a [routerLink]="['/login']">(Sign in)</a></p>
   </form>
 </div>
