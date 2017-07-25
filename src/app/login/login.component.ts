@@ -25,10 +25,10 @@ export class LoginComponent implements OnInit {
                   localStorage.setItem('token', data.token);
                   localStorage.setItem('userId', data.userId);
                   this.router.navigateByUrl('/dashboard');
-                  this.flashmessage.show('You successfully logged in.', {cssClass: 'alert-success', timeout: '2000'});
+                  this.flashmessage.show('You have successfully logged in.', {cssClass: 'alert-success', timeout: '2000'});
               },
               error => {
-                this.flashmessage.show('Login Failed', {cssClass: 'alert-danger', timeout: '2000'});
+                this.flashmessage.show('Login failed, please try again.', {cssClass: 'alert-danger', timeout: '2000'});
             }
           );
       this.myForm.reset();

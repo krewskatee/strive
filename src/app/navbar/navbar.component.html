@@ -20,9 +20,9 @@
           <input type="password" placeholder="Password" class="form-control" formControlName="password">
         </div>
         <button class="btn btn-primary" type="submit" [disabled]="!myForm.valid" *ngIf="!isLoggedIn()">Sign In</button>
+        <a [routerLink]="['/register']" *ngIf="!isLoggedIn()"><button class="btn btn-info btn-signin" type="button" (click)="sign()">Sign Up</button></a>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a [routerLink]="['/register']" *ngIf="!isLoggedIn()">Sign Up</a></li>
         <li><a [routerLink]="['/dashboard']" *ngIf="isLoggedIn()">Dashboard</a></li>
         <li><button class="btn btn-danger btn-logout" (click)="onLogout()" *ngIf="isLoggedIn()">Sign out</button></li>
       </ul>

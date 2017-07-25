@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FitbitauthComponent } from './fitbitauth/fitbitauth.component';
 import { LandingPageDetailsComponent } from './landing-page-details/landing-page-details.component';
 import { AuthService } from '../../services/auth.service';
+import { AuthGuard } from '../../services/auth.guard';
 
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { LoginComponent } from './login/login.component';
@@ -20,7 +21,7 @@ const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'authenticate', component: AuthenticateComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
   { path: 'fitbitauth', component: FitbitauthComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: LandingPageDetailsComponent }
@@ -45,7 +46,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     FlashMessagesModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
