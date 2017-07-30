@@ -3,11 +3,12 @@
   padding-top: 0px;
   padding-bottom:0px;
   background-image: url("/assets/landingpage/croppedlogo.png");
-  background-color: rgb(44, 62, 80);
+  background-color: #282830;
   background-size: 650px;
   background-repeat: no-repeat;
   background-position: center;
   height:560px;
+  width: 100%;
  }
 
 .jumbotron-special
